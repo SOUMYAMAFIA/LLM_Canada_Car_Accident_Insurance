@@ -5,7 +5,7 @@ import os
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-os.environ["OPENAI_API_KEY"]="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"
+os.environ["OPENAI_API_KEY"]="OPENAI_API_KEY"
 
 
 from langchain.prompts import PromptTemplate

@@ -7,6 +7,7 @@ also give results on the basis of which fault is this
 To Run this file 
 install flask api
 Then
-python app.py
 
+**python app.py
+**
 

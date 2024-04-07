@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canadian Vehicle Insurance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+        }
+        select, input[type="text"] {
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            width: 100%;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0056b3;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #003d82;
+        }
+        #output {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Canadian Vehicle Insurance</h1>
+        <form method="POST">
+            <label for="where_you_were">Where you were:</label>
+            <select name="where_you_were" id="where_you_were">
+                <option value="">--Select an option--</option>
+                {% for option in where_you_were_options %}
+                <option value="{{ option }}" {% if option == selected_where %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="how_many_vehicles">How many vehicles:</label>
+            <select name="how_many_vehicles" id="how_many_vehicles">
+                <option value="">--Select an option--</option>
+                {% for option in how_many_vehicles_options %}
+                <option value="{{ option }}" {% if option == selected_vehicles %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="input_text">Enter text:</label>
+            <textarea id="input_text" name="input_text" rows="8" cols="50">{{ input_text }}</textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <div id="output">
+            <p>{{ output_text }}</p>
+        </div>
+    </div>
+</body>
+</html>
